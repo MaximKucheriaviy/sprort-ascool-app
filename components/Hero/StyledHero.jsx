@@ -3,8 +3,8 @@ import styled from "@emotion/styled";
 export const StyledHero = styled.section`
   background-color: ${({ theme }) => theme.palette.herroColor.main};
   padding-left: 63px;
-  padding-top: 64px;
-  height: 400px;
+  padding-top: 40px;
+  height: 300px;
   .subTitle {
     color: #fff;
     font-family: "Alegreya Sans", sans-serif;

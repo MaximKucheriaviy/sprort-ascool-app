@@ -1,4 +1,4 @@
-import { StyledNavigation } from "./StyledNavigation";
+import { StyledNavigation, StyledMenuItem } from "./StyledNavigation";
 import { KlickMenu } from "../KlickMenu/KilckMenu";
 import { MenuItem } from "@mui/material";
 import { navigaion } from "@/service/navigationMap";
@@ -11,39 +11,58 @@ export const Navigation = () => {
         <li>
           <KlickMenu buttonText="Про ДЮСШ">
             {navigaion.about.map((item) => (
-              <MenuItem key={item.link}>
+              <StyledMenuItem key={item.link}>
                 <Link href={item.link}>{item.title}</Link>
-              </MenuItem>
+              </StyledMenuItem>
+            ))}
+          </KlickMenu>
+        </li>
+        <li>
+          <KlickMenu buttonText="Спорт">
+            {navigaion.sport.map((item) => (
+              <StyledMenuItem key={item.link}>
+                <Link href={item.link}>{item.title}</Link>
+              </StyledMenuItem>
+            ))}
+          </KlickMenu>
+        </li>
+        <li>
+          <KlickMenu buttonText="Інформація для батьків">
+            {navigaion.parrentsInfo.map((item) => (
+              <StyledMenuItem key={item.link}>
+                <Link href={item.link}>{item.title}</Link>
+              </StyledMenuItem>
             ))}
           </KlickMenu>
         </li>
         <li>
           <KlickMenu buttonText="Нормативна база">
             {navigaion.stadarts.map((item) => (
-              <MenuItem key={item.link}>
+              <StyledMenuItem key={item.link}>
                 <Link href={item.link}>{item.title}</Link>
-              </MenuItem>
+              </StyledMenuItem>
             ))}
           </KlickMenu>
         </li>
         <li>
-          <KlickMenu buttonText="Спорт">
-            <MenuItem>Про ДЮСШ</MenuItem>
+          <KlickMenu buttonText="Методично-виховна робота">
+            {navigaion.metodWork.map((item) => (
+              <StyledMenuItem key={item.link}>
+                <Link href={item.link}>{item.title}</Link>
+              </StyledMenuItem>
+            ))}
           </KlickMenu>
         </li>
-        <li>
-          <KlickMenu buttonText="Інформація для батьків">
-            <MenuItem>Про ДЮСШ</MenuItem>
-          </KlickMenu>
-        </li>
-        <li>
-          <KlickMenu buttonText="Методико-виховна робота">
-            <MenuItem>Про ДЮСШ</MenuItem>
-          </KlickMenu>
-        </li>
+
         <li>
           <KlickMenu buttonText="Прозоро">
-            <MenuItem>Про ДЮСШ</MenuItem>
+            {navigaion.prozoro.map((item) => (
+              <StyledMenuItem key={item.link}>
+                <Link className="link" href={item.link}>
+                  {item.title}
+                </Link>
+              </StyledMenuItem>
+            ))}
           </KlickMenu>
         </li>
       </ul>

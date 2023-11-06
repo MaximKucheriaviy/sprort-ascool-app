@@ -1,5 +1,23 @@
 import styled from "@emotion/styled";
-import { Box } from "@mui/material";
+import { Box, MenuItem } from "@mui/material";
+
+export const StyledMenuItem = styled(MenuItem)`
+  transition-property: background-color;
+  transition-duration: 300ms;
+  background-color: ${({ theme }) => theme.palette.white.main};
+  &:hover {
+    background-color: ${({ theme }) => theme.palette.herroColor.main};
+    & a {
+      color: ${({ theme }) => theme.palette.white.main};
+    }
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    transition-property: color;
+    transition-duration: 300ms;
+  }
+`;
 
 export const StyledNavigation = styled(Box)`
   padding-right: 30px;
@@ -26,5 +44,8 @@ export const StyledNavigation = styled(Box)`
     &:hover {
       text-decoration: underline;
     }
+  }
+  a {
+    text-decoration: none;
   }
 `;
