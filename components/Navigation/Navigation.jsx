@@ -1,6 +1,8 @@
 import { StyledNavigation } from "./StyledNavigation";
 import { KlickMenu } from "../KlickMenu/KilckMenu";
 import { MenuItem } from "@mui/material";
+import { navigaion } from "@/service/navigationMap";
+import Link from "next/link";
 
 export const Navigation = () => {
   return (
@@ -8,12 +10,20 @@ export const Navigation = () => {
       <ul>
         <li>
           <KlickMenu buttonText="Про ДЮСШ">
-            <MenuItem>Про ДЮСШ</MenuItem>
+            {navigaion.about.map((item) => (
+              <MenuItem key={item.link}>
+                <Link href={item.link}>{item.title}</Link>
+              </MenuItem>
+            ))}
           </KlickMenu>
         </li>
         <li>
           <KlickMenu buttonText="Нормативна база">
-            <MenuItem>Про ДЮСШ</MenuItem>
+            {navigaion.stadarts.map((item) => (
+              <MenuItem key={item.link}>
+                <Link href={item.link}>{item.title}</Link>
+              </MenuItem>
+            ))}
           </KlickMenu>
         </li>
         <li>

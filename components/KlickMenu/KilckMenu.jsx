@@ -27,6 +27,7 @@ export const KlickMenu = ({ buttonText, children }) => {
         onClick={closeHandler}
         anchorEl={ancorEl}
         open={Boolean(ancorEl)}
+        disableScrollLock={true}
       >
         {children}
       </Menu>
