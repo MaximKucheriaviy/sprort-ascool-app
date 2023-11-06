@@ -1,5 +1,5 @@
 import handler from "@/pages/api/hello";
-import { Button, Menu, MenuItem } from "@mui/material";
+import { Button, Menu } from "@mui/material";
 import { useState } from "react";
 
 export const KlickMenu = ({ buttonText, children }) => {
@@ -12,7 +12,9 @@ export const KlickMenu = ({ buttonText, children }) => {
   };
   return (
     <>
-      <Button onClick={openHandler}>{buttonText}</Button>
+      <Button onClick={openHandler} color="white">
+        {buttonText}
+      </Button>
       <Menu
         anchorOrigin={{
           vertical: "bottom",

@@ -17,17 +17,22 @@ export const Navigation = () => {
           </KlickMenu>
         </li>
         <li>
-          <KlickMenu buttonText="Про ДЮСШ">
+          <KlickMenu buttonText="Спорт">
             <MenuItem>Про ДЮСШ</MenuItem>
           </KlickMenu>
         </li>
         <li>
-          <KlickMenu buttonText="Про ДЮСШ">
+          <KlickMenu buttonText="Інформація для батьків">
             <MenuItem>Про ДЮСШ</MenuItem>
           </KlickMenu>
         </li>
         <li>
-          <KlickMenu buttonText="Про ДЮСШ">
+          <KlickMenu buttonText="Методико-виховна робота">
+            <MenuItem>Про ДЮСШ</MenuItem>
+          </KlickMenu>
+        </li>
+        <li>
+          <KlickMenu buttonText="Прозоро">
             <MenuItem>Про ДЮСШ</MenuItem>
           </KlickMenu>
         </li>

@@ -11,4 +11,20 @@ export const StyledNavigation = styled(Box)`
     align-items: center;
     justify-content: right;
   }
+  li {
+    height: 100%;
+  }
+  button {
+    text-transform: none;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.84px;
+    height: 100%;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;

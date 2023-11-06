@@ -15,4 +15,9 @@ mainTheme.palette.herroColor = mainTheme.palette.augmentColor({
   name: "herroColor",
 });
 
-console.log(mainTheme.palette);
+mainTheme.palette.white = mainTheme.palette.augmentColor({
+  color: {
+    main: "#ffffff",
+  },
+  name: "white",
+});
