@@ -15,6 +15,8 @@ export const StyledMenuItem = styled(MenuItem)`
     text-decoration: none;
     color: black;
     transition-property: color;
+    width: 100%;
+    height: 100%;
     transition-duration: 300ms;
   }
 `;

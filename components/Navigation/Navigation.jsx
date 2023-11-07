@@ -1,6 +1,5 @@
 import { StyledNavigation, StyledMenuItem } from "./StyledNavigation";
 import { KlickMenu } from "../KlickMenu/KilckMenu";
-import { MenuItem } from "@mui/material";
 import { navigaion } from "@/service/navigationMap";
 import Link from "next/link";
 
