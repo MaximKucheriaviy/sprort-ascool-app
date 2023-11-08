@@ -21,3 +21,10 @@ mainTheme.palette.white = mainTheme.palette.augmentColor({
   },
   name: "white",
 });
+
+mainTheme.palette.blockBackground = mainTheme.palette.augmentColor({
+  color: {
+    main: "#D9D9D9",
+  },
+  name: "blockBackground",
+});
