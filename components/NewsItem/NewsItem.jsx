@@ -10,15 +10,17 @@ export const NewsItem = ({ news }) => {
       : news.textContent.slice(0, symbolsCount) + "...";
   return (
     <StyledNewsItem>
-      <h2>{news.title}</h2>
+      <h2 className="title">{news.title}</h2>
       <div className="content">
         <div className="imageThumb">
-          <Image
-            src={news.postImage.url}
-            alt="poster"
-            width={367}
-            height={211}
-          />
+          <div className="imageCover">
+            <Image
+              src={news.postImage.url}
+              alt="poster"
+              width={367}
+              height={211}
+            />
+          </div>
         </div>
         <p className="textContent">{textContent}</p>
       </div>

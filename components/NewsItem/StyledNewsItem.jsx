@@ -2,33 +2,48 @@ import styled from "@emotion/styled";
 
 export const StyledNewsItem = styled.div`
   background-color: ${({ theme }) => theme.palette.blockBackground.main};
+  padding: 24px 57px 53px 20px;
+  border-radius: 5px;
+
+  .title {
+    color: #000;
+    font-family: Roboto, sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
   .imageThumb {
     overflow: hidden;
     width: 367px;
     height: 211px;
-    /* background-color: black; */
-    object-fit: cover;
-    display: flex;
-    justify-content: center;
+    text-align: center;
   }
   .content {
     margin-top: 14px;
     display: grid;
     grid-template-columns: 376px 323px;
     grid-gap: 40px;
+
+    .imageCover {
+      height: 100%;
+      display: inline-block;
+      overflow: hidden;
+      border-radius: 10px;
+    }
   }
   img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
   }
   .textContent {
     color: #000;
 
-    font-family: Roboto, sans-serif;
+    text-align: justify;
+    font-family: Roboto;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 132.687%; /* 18.576px */
-    letter-spacing: 0.84px;
+    line-height: 161.188%; /* 22.566px */
   }
 `;

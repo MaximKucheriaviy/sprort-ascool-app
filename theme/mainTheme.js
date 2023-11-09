@@ -24,7 +24,7 @@ mainTheme.palette.white = mainTheme.palette.augmentColor({
 
 mainTheme.palette.blockBackground = mainTheme.palette.augmentColor({
   color: {
-    main: "#D9D9D9",
+    main: "#F4F4F4",
   },
   name: "blockBackground",
 });

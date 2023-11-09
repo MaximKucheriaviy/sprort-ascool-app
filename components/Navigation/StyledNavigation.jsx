@@ -22,9 +22,13 @@ export const StyledMenuItem = styled(MenuItem)`
 `;
 
 export const StyledNavigation = styled(Box)`
-  padding-right: 30px;
   height: 72px;
   background-color: ${({ theme }) => theme.palette.headerColor.main};
+  display: flex;
+  align-items: center;
+  .container {
+    height: 100%;
+  }
   ul {
     height: 100%;
     display: flex;
