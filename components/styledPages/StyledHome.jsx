@@ -1,15 +1,16 @@
 import styled from "@emotion/styled";
 
 export const StyledHome = styled.section`
-  background-color: white;
-  padding-top: 40px;
-  display: grid;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 40px;
-  grid-template-columns: 816px 355px;
-  justify-content: center;
-  grid-column-gap: 40px;
+  .homeContainer {
+    background-color: white;
+    padding-top: 40px;
+    display: grid;
+    padding-bottom: 40px;
+    grid-template-columns: 816px 355px;
+    justify-content: space-between;
+    grid-column-gap: 40px;
+  }
+
   .newsList {
     display: flex;
     flex-direction: column;

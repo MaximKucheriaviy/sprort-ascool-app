@@ -16,8 +16,8 @@ export const getStaticProps = async (context) => {
 export default function Home({ news }) {
   return (
     <Layout>
-      <div className="container">
-        <StyledHome>
+      <StyledHome>
+        <div className="container homeContainer">
           <div className="newsList">
             {news &&
               news.map((item) => <NewsItem key={item._id} news={item} />)}
@@ -56,8 +56,8 @@ export default function Home({ news }) {
               </p>
             </div>
           </div>
-        </StyledHome>
-      </div>
+        </div>
+      </StyledHome>
     </Layout>
   );
 }
