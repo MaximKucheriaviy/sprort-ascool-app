@@ -23,9 +23,11 @@ export default function Home({ news }) {
               news.map((item) => <NewsItem key={item._id} news={item} />)}
           </div>
           <div className="asside">
-            <Link className="assideLink" href="/">
-              Інформація для вступу
-            </Link>
+            <div className="topButtonCover">
+              <Link className="assideLink" href="/">
+                Інформація для вступу
+              </Link>
+            </div>
             <h2>Спортивні відділення</h2>
             <ul className="linekList">
               {navigaion.sport[0].navItems.map((item, index) => {

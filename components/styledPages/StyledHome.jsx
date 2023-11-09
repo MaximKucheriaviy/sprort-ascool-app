@@ -35,8 +35,12 @@ export const StyledHome = styled.section`
     backdrop-filter: contrast(40%);
   }
   .asside {
+    & .topButtonCover {
+      padding-bottom: 27px;
+      border-bottom: 2px solid ${({ theme }) => theme.palette.herroColor.main};
+    }
     & h2 {
-      margin-top: 27px;
+      margin-top: 10px;
       text-align: center;
 
       color: #000;
@@ -72,12 +76,14 @@ export const StyledHome = styled.section`
 
       color: #fff;
 
-      font-family: Roboto;
-      font-size: 16px;
+      text-transform: none;
+      font-family: Roboto, sans-serif;
+      font-size: 14px;
       font-style: normal;
-      font-weight: 400;
-      text-decoration: none;
+      font-weight: 600;
       line-height: normal;
+      letter-spacing: 0.84px;
+      text-decoration: none;
     }
   }
 `;
