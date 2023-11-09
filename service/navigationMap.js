@@ -1,7 +1,8 @@
-const createNavItem = (title, link) => {
+const createNavItem = (title, link, navItems = []) => {
   return {
     title,
     link,
+    navItems,
   };
 };
 
@@ -20,7 +21,18 @@ export const navigaion = {
     createNavItem("Нормативні документи", "docs"),
   ],
   sport: [
-    createNavItem("Спортивні відділення", "sport-department"),
+    createNavItem("Спортивні відділення", "sport-department", [
+      createNavItem("Баскетбол", "bascketball"),
+      createNavItem("Волейбол", "volayball"),
+      createNavItem("Плавання", "swiming"),
+      createNavItem("Важка атлетика", "havi-athletick"),
+      createNavItem("Панкратіон", "pankration"),
+      createNavItem("Спортивне орієнтування", "sport-orientation"),
+      createNavItem("Кульова стрільба", "shooting"),
+      createNavItem("Настільний теніс", "table-tanis"),
+      createNavItem("Фехтування", "swordPlay"),
+      createNavItem("Фрі-файт", "free-fight"),
+    ]),
     createNavItem("Навчально-тренувальна робота", "edocation-work"),
     createNavItem("Календар змагань", "calender"),
   ],
