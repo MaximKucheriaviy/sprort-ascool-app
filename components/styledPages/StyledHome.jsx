@@ -11,6 +11,27 @@ export const StyledHome = styled.section`
     grid-column-gap: 40px;
   }
 
+  & .searchForm {
+    border-bottom: 2px solid ${({ theme }) => theme.palette.herroColor.main};
+    padding-bottom: 28px;
+    & .inputDiv {
+      height: 100%;
+      display: inline-block;
+      position: relative;
+      & button {
+        padding: 0;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        min-width: auto;
+        width: 50px;
+      }
+    }
+    & svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
   .newsList {
     display: flex;
     flex-direction: column;

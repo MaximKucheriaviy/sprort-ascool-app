@@ -6,9 +6,9 @@ import Link from "next/link";
 import { navigaion } from "@/service/navigationMap";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import { Pagination } from "@mui/material";
+import { Pagination, TextField, Button } from "@mui/material";
 import Image from "next/image";
-
+import { AiOutlineSearch } from "react-icons/ai";
 export const getServerSideProps = async (context) => {
   const { query } = context;
   const { news, pagesCount } = await getNews(query.page || 1);
@@ -28,6 +28,10 @@ export default function Home({ news, pagesCount }) {
     setPage(router.query.page ? Number.parseInt(router.query.page) : 1);
   }, []);
 
+  const sublitHandler = (event) => {
+    event.preventDefault();
+  };
+
   const handlePageChage = (event, value) => {
     setPage(value);
     router.push({
@@ -42,6 +46,22 @@ export default function Home({ news, pagesCount }) {
       <StyledHome>
         <div className="container homeContainer">
           <div className="newsList">
+            <form className="searchForm" onSubmit={sublitHandler}>
+              <div className="inputDiv">
+                <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  label="Пошук"
+                  size="small"
+                  sx={{
+                    width: "500px",
+                  }}
+                />
+                <Button color="herroColor" type="submit">
+                  <AiOutlineSearch />
+                </Button>
+              </div>
+            </form>
             {news &&
               news.map((item) => <NewsItem key={item._id} news={item} />)}
             <div className="paginationDiv">
