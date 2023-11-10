@@ -7,10 +7,10 @@ import { navigaion } from "@/service/navigationMap";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { Pagination } from "@mui/material";
+import Image from "next/image";
 
 export const getServerSideProps = async (context) => {
   const { query } = context;
-  console.log(query);
   const { news, pagesCount } = await getNews(query.page || 1);
   return {
     props: {
@@ -49,6 +49,7 @@ export default function Home({ news, pagesCount }) {
                 count={pagesCount}
                 page={page || 1}
                 onChange={handlePageChage}
+                color="herroColor"
               />
             </div>
           </div>
@@ -84,6 +85,14 @@ export default function Home({ news, pagesCount }) {
                 дітей та молоді, самореалізації, набуття навичок здорового
                 способу життя, підготовки спортсменів для резервного спорту.{" "}
               </p>
+            </div>
+            <div className="homeGalery">
+              <Image
+                src="/homeImages/i1.jpg"
+                alt="students"
+                width={300}
+                height={100}
+              />
             </div>
           </div>
         </div>

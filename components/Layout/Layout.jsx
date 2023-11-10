@@ -2,6 +2,7 @@ import { Header } from "../Header/Header";
 import Head from "next/head";
 import { Hero } from "../Hero/Hero";
 import { Navigation } from "../Navigation/Navigation";
+import { Footer } from "../Footer/Fotter";
 
 export const Layout = ({ children, title = "ДЮСШ №1" }) => {
   return (
@@ -27,6 +28,7 @@ export const Layout = ({ children, title = "ДЮСШ №1" }) => {
           {children}
         </div>
       </main>
+      <Footer />
     </>
   );
 };

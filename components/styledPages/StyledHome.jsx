@@ -15,6 +15,11 @@ export const StyledHome = styled.section`
     display: flex;
     flex-direction: column;
     gap: 30px;
+
+    .paginationDiv {
+      display: flex;
+      justify-content: center;
+    }
   }
   .backtextCaveat {
     background-image: url("/infoBack.jpg");
@@ -85,6 +90,13 @@ export const StyledHome = styled.section`
       line-height: normal;
       letter-spacing: 0.84px;
       text-decoration: none;
+    }
+    & .homeGalery {
+      margin-top: 30px;
+      & img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 `;
