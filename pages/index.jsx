@@ -4,16 +4,39 @@ import { StyledHome } from "@/components/styledPages/StyledHome";
 import { NewsItem } from "@/components/NewsItem/NewsItem";
 import Link from "next/link";
 import { navigaion } from "@/service/navigationMap";
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
+import { Pagination } from "@mui/material";
 
-export const getStaticProps = async (context) => {
-  const news = await getNews();
+export const getServerSideProps = async (context) => {
+  const { query } = context;
+  console.log(query);
+  const { news, pagesCount } = await getNews(query.page || 1);
   return {
     props: {
       news,
+      pagesCount,
     },
   };
 };
-export default function Home({ news }) {
+export default function Home({ news, pagesCount }) {
+  const router = useRouter();
+  const [page, setPage] = useState(null);
+
+  useEffect(() => {
+    console.log(router.query.page);
+    setPage(router.query.page ? Number.parseInt(router.query.page) : 1);
+  }, []);
+
+  const handlePageChage = (event, value) => {
+    setPage(value);
+    router.push({
+      query: {
+        page: value,
+      },
+    });
+  };
+
   return (
     <Layout>
       <StyledHome>
@@ -21,6 +44,13 @@ export default function Home({ news }) {
           <div className="newsList">
             {news &&
               news.map((item) => <NewsItem key={item._id} news={item} />)}
+            <div className="paginationDiv">
+              <Pagination
+                count={pagesCount}
+                page={page || 1}
+                onChange={handlePageChage}
+              />
+            </div>
           </div>
           <div className="asside">
             <div className="topButtonCover">
