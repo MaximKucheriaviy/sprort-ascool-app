@@ -11,7 +11,10 @@ import Image from "next/image";
 import { AiOutlineSearch } from "react-icons/ai";
 export const getServerSideProps = async (context) => {
   const { query } = context;
-  const { news, pagesCount } = await getNews(query.page || 1);
+  const { news, pagesCount } = await getNews(
+    query.page || 1,
+    query.keyword || ""
+  );
   return {
     props: {
       news,
@@ -22,6 +25,7 @@ export const getServerSideProps = async (context) => {
 export default function Home({ news, pagesCount }) {
   const router = useRouter();
   const [page, setPage] = useState(null);
+  const [keyword, setKeyword] = useState("");
 
   useEffect(() => {
     console.log(router.query.page);
@@ -30,6 +34,13 @@ export default function Home({ news, pagesCount }) {
 
   const sublitHandler = (event) => {
     event.preventDefault();
+    setKeyword(event.target[0].value);
+    router.push({
+      query: {
+        keyword: event.target[0].value,
+      },
+    });
+    event.target.reset();
   };
 
   const handlePageChage = (event, value) => {
