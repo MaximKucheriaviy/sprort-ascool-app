@@ -1,5 +1,5 @@
 import { Layout } from "@/components/Layout/Layout";
 
-export default () => {
+export default function ErrorPage() {
   return <Layout>Помилка запиту</Layout>;
-};
+}
