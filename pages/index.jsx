@@ -28,9 +28,8 @@ export default function Home({ news, pagesCount }) {
   const [keyword, setKeyword] = useState("");
 
   useEffect(() => {
-    console.log(router.query.page);
     setPage(router.query.page ? Number.parseInt(router.query.page) : 1);
-  }, []);
+  }, [router.query.page]);
 
   const sublitHandler = (event) => {
     event.preventDefault();
