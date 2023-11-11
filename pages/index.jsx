@@ -64,6 +64,11 @@ export default function Home({ news, pagesCount }) {
                   variant="outlined"
                   label="Пошук"
                   size="small"
+                  type="text"
+                  value={keyword}
+                  onChange={({ target }) => {
+                    setKeyword(target.value);
+                  }}
                   sx={{
                     width: "500px",
                   }}
