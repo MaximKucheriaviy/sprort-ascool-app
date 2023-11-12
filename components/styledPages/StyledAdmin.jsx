@@ -8,6 +8,10 @@ export const StyledAdmin = styled.ul`
     display: flex;
     gap: 30px;
     justify-content: space-around;
+    & img {
+      width: 100%;
+      height: auto;
+    }
   }
   & .reversed {
     flex-direction: row-reverse;
