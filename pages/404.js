@@ -1,5 +1,5 @@
-import { Layout } from "@/components/Layout/Layout";
+import { Page } from "@/components/Page/Page";
 
 export default function ErrorPage() {
-  return <Layout>Помилка запиту</Layout>;
+  return <Page title={" Сторінка в процесі розробки"}></Page>;
 }
