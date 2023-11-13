@@ -5,6 +5,11 @@ export const StyledNewsItem = styled.div`
   padding: 24px 57px 53px 20px;
   border-radius: 5px;
 
+  & svg {
+    display: block;
+    width: 70%;
+    height: 70%;
+  }
   .title {
     color: #000;
     font-family: Roboto, sans-serif;
@@ -45,5 +50,9 @@ export const StyledNewsItem = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 161.188%; /* 22.566px */
+  }
+  & .buttonDiv {
+    margin-top: 10px;
+    text-align: right;
   }
 `;
