@@ -13,7 +13,7 @@ export const NewsItem = ({ news }) => {
       ? news.textContent
       : news.textContent.slice(0, symbolsCount) + "...";
   const clickHandler = () => {
-    router.push(`news/${news._id}`);
+    router.push(`/${news._id}`);
   };
   return (
     <StyledNewsItem>

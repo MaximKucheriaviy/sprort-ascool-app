@@ -24,3 +24,13 @@ export const getNews = async (
     return null;
   }
 };
+
+export const getNewsDyID = async (id) => {
+  try {
+    const result = await axios.get(`news/${id}`);
+    return result.data;
+  } catch (err) {
+    console.log(err);
+    return null;
+  }
+};
