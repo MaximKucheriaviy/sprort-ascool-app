@@ -12,7 +12,7 @@ export const Navigation = () => {
             <KlickMenu buttonText="Про ДЮСШ">
               {navigaion.about.map((item) => (
                 <StyledMenuItem key={item.link}>
-                  <Link href={item.link}>{item.title}</Link>
+                  <Link href={"/" + item.link}>{item.title}</Link>
                 </StyledMenuItem>
               ))}
             </KlickMenu>

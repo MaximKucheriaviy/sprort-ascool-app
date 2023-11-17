@@ -8,6 +8,6 @@ export const StyledPDFPage = styled.ul`
   & li {
     padding: 20px;
     background-color: #e6e6e6;
-    border-radius: 10px;
+    border-radius: 20px;
   }
 `;
