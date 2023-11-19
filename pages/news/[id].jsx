@@ -38,6 +38,7 @@ export default function NewsPage({ news }) {
             alt="POSTER"
             width={400}
             height={250}
+            unoptimized={true}
           />
         </div>
         <ImageList variant="quilted" cols={3} gap={8}>
