@@ -3,11 +3,23 @@ import { KlickMenu } from "../KlickMenu/KilckMenu";
 import { navigaion } from "@/service/navigationMap";
 import Link from "next/link";
 
-export const Navigation = () => {
+export const Navigation = ({ main }) => {
   return (
     <StyledNavigation component="nav">
       <div className="container">
+        <div className="navDiv">
+          {main && (
+            <Link className="link" href="/">
+              На головну
+            </Link>
+          )}
+        </div>
         <ul>
+          <li>
+            <Link className="link" href="/">
+              Новини
+            </Link>
+          </li>
           <li>
             <KlickMenu buttonText="Про ДЮСШ">
               {navigaion.about.map((item) => (

@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+
 import { ThemeProvider } from "@mui/material";
 import { mainTheme } from "@/theme/mainTheme";
 

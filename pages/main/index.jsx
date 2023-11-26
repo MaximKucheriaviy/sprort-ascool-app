@@ -1,93 +1,23 @@
 import { Layout } from "@/components/Layout/Layout";
-import { getNews } from "@/service/servierAPI";
-import { StyledHome } from "@/components/styledPages/StyledHome";
-import { NewsItem } from "@/components/NewsItem/NewsItem";
+import { StyledMain } from "@/components/styledPages/StyledMain";
+import Carousel from "react-material-ui-carousel";
 import Link from "next/link";
 import { navigaion } from "@/service/navigationMap";
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import { Pagination, TextField, Button } from "@mui/material";
 import Image from "next/image";
-import { AiOutlineSearch } from "react-icons/ai";
-export const getServerSideProps = async (context) => {
-  const { query } = context;
-  const { news, pagesCount } = await getNews(
-    query.page || 1,
-    query.keyword || ""
-  );
-  return {
-    props: {
-      news,
-      pagesCount,
-    },
-  };
-};
-export default function Home({ news, pagesCount }) {
-  const router = useRouter();
-  const [page, setPage] = useState(null);
-  const [keyword, setKeyword] = useState("");
 
-  useEffect(() => {
-    setPage(router.query.page ? Number.parseInt(router.query.page) : 1);
-  }, [router.query.page]);
-
-  const sublitHandler = (event) => {
-    event.preventDefault();
-    setKeyword(event.target[0].value);
-    router.push({
-      query: {
-        keyword: event.target[0].value,
-      },
-    });
-    event.target.reset();
-  };
-
-  const handlePageChage = (event, value) => {
-    setPage(value);
-    router.push({
-      query: {
-        page: value,
-      },
-    });
-  };
-
+export default function Main() {
   return (
-    <Layout main={false}>
-      <StyledHome>
+    <Layout>
+      <StyledMain>
         <div className="container homeContainer">
-          <div className="newsList">
-            <form className="searchForm" onSubmit={sublitHandler}>
-              <div className="inputDiv">
-                <TextField
-                  id="outlined-basic"
-                  variant="outlined"
-                  label="Пошук"
-                  size="small"
-                  type="text"
-                  value={keyword}
-                  onChange={({ target }) => {
-                    setKeyword(target.value);
-                  }}
-                  sx={{
-                    width: "500px",
-                  }}
-                />
-                <Button color="herroColor" type="submit">
-                  <AiOutlineSearch />
-                </Button>
-              </div>
-            </form>
-            {news &&
-              news.map((item) => <NewsItem key={item._id} news={item} />)}
-            <div className="paginationDiv">
-              <Pagination
-                count={pagesCount}
-                page={page || 1}
-                onChange={handlePageChage}
-                color="herroColor"
-              />
+          <Carousel>
+            <div>
+              <h3>1</h3>
             </div>
-          </div>
+            <div>
+              <h3>2</h3>
+            </div>
+          </Carousel>
           <div className="asside">
             <div className="topButtonCover">
               <Link className="assideLink" href="/">
@@ -131,7 +61,7 @@ export default function Home({ news, pagesCount }) {
             </div>
           </div>
         </div>
-      </StyledHome>
+      </StyledMain>
     </Layout>
   );
 }

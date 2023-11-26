@@ -8,9 +8,9 @@ const Container = styled.div`
   padding-bottom: 70px;
 `;
 
-export const Page = ({ title, children }) => {
+export const Page = ({ title, children, main = true }) => {
   return (
-    <Layout>
+    <Layout title={title} main={main}>
       <section>
         <Container
           style={{

@@ -4,7 +4,7 @@ import { Hero } from "../Hero/Hero";
 import { Navigation } from "../Navigation/Navigation";
 import { Footer } from "../Footer/Fotter";
 
-export const Layout = ({ children, title = "ДЮСШ №1" }) => {
+export const Layout = ({ children, title = "ДЮСШ №1", main }) => {
   return (
     <>
       <Head>
@@ -16,7 +16,7 @@ export const Layout = ({ children, title = "ДЮСШ №1" }) => {
       <Header />
       <main>
         <Hero />
-        <Navigation />
+        <Navigation main={main} />
         <div
           style={{
             backgroundImage: "url(/background.jpeg)",

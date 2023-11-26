@@ -28,6 +28,9 @@ export const StyledNavigation = styled(Box)`
   align-items: center;
   .container {
     height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   ul {
     height: 100%;
@@ -38,7 +41,10 @@ export const StyledNavigation = styled(Box)`
   li {
     height: 100%;
   }
-  button {
+  button,
+  .link {
+    padding-left: 8px;
+    padding-right: 8px;
     text-transform: none;
     font-family: Roboto, sans-serif;
     font-size: 14px;
@@ -47,11 +53,22 @@ export const StyledNavigation = styled(Box)`
     line-height: normal;
     letter-spacing: 0.84px;
     height: 100%;
+    display: flex;
+    align-items: center;
+    color: ${({ theme }) => theme.palette.white.main};
+    transition-property: background-color text-decoration;
+    background-color: transparent;
+    text-decoration: none;
+    transition-duration: 300ms;
     &:hover {
       text-decoration: underline;
+      background-color: ${({ theme }) => theme.palette.headerColor.light};
     }
   }
   a {
     text-decoration: none;
+  }
+  & .navDiv {
+    height: 100%;
   }
 `;
