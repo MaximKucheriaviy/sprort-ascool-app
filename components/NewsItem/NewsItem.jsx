@@ -4,7 +4,7 @@ import { MdExpandMore } from "react-icons/md";
 import { Button } from "@mui/material";
 import { useRouter } from "next/router";
 
-const symbolsCount = 374;
+const symbolsCount = 950;
 
 export const NewsItem = ({ news }) => {
   const router = useRouter();

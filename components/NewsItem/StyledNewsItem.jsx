@@ -4,7 +4,6 @@ export const StyledNewsItem = styled.div`
   background-color: ${({ theme }) => theme.palette.blockBackground.main};
   padding: 24px 57px 53px 20px;
   border-radius: 5px;
-
   & svg {
     display: block;
     width: 70%;
@@ -20,14 +19,14 @@ export const StyledNewsItem = styled.div`
   }
   .imageThumb {
     overflow: hidden;
-    width: 367px;
-    height: 211px;
+    width: 600px;
+    height: 400px;
     text-align: center;
   }
   .content {
     margin-top: 14px;
     display: grid;
-    grid-template-columns: 376px 323px;
+    grid-template-columns: 600px 1fr;
     grid-gap: 40px;
 
     .imageCover {
@@ -46,7 +45,7 @@ export const StyledNewsItem = styled.div`
 
     text-align: justify;
     font-family: Roboto;
-    font-size: 14px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 161.188%; /* 22.566px */

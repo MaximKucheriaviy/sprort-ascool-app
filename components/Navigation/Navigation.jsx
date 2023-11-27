@@ -16,7 +16,7 @@ export const Navigation = ({ main }) => {
         </div>
         <ul>
           <li>
-            <Link className="link" href="/">
+            <Link className="link" href="/news">
               Новини
             </Link>
           </li>

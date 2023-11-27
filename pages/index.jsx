@@ -1,100 +1,92 @@
 import { Layout } from "@/components/Layout/Layout";
-import { getNews } from "@/service/servierAPI";
-import { StyledHome } from "@/components/styledPages/StyledHome";
-import { NewsItem } from "@/components/NewsItem/NewsItem";
+import { StyledMain } from "@/components/styledPages/StyledMain";
+import Carousel from "react-material-ui-carousel";
 import Link from "next/link";
 import { navigaion } from "@/service/navigationMap";
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import { Pagination, TextField, Button } from "@mui/material";
 import Image from "next/image";
-import { AiOutlineSearch } from "react-icons/ai";
-export const getServerSideProps = async (context) => {
-  const { query } = context;
-  const { news, pagesCount } = await getNews(
-    query.page || 1,
-    query.keyword || ""
-  );
-  return {
-    props: {
-      news,
-      pagesCount,
-    },
-  };
-};
-export default function Home({ news, pagesCount }) {
-  const router = useRouter();
-  const [page, setPage] = useState(null);
-  const [keyword, setKeyword] = useState("");
+import { Page } from "@/components/Page/Page";
 
-  useEffect(() => {
-    setPage(router.query.page ? Number.parseInt(router.query.page) : 1);
-  }, [router.query.page]);
-
-  const sublitHandler = (event) => {
-    event.preventDefault();
-    setKeyword(event.target[0].value);
-    router.push({
-      query: {
-        keyword: event.target[0].value,
-      },
-    });
-    event.target.reset();
-  };
-
-  const handlePageChage = (event, value) => {
-    setPage(value);
-    router.push({
-      query: {
-        page: value,
-      },
-    });
-  };
-
+export default function Main() {
   return (
-    <Layout main={false}>
-      <StyledHome>
-        <div className="container homeContainer">
-          <div className="newsList">
-            <form className="searchForm" onSubmit={sublitHandler}>
-              <div className="inputDiv">
-                <TextField
-                  id="outlined-basic"
-                  variant="outlined"
-                  label="Пошук"
-                  size="small"
-                  type="text"
-                  value={keyword}
-                  onChange={({ target }) => {
-                    setKeyword(target.value);
-                  }}
-                  sx={{
-                    width: "500px",
-                  }}
-                />
-                <Button color="herroColor" type="submit">
-                  <AiOutlineSearch />
-                </Button>
-              </div>
-            </form>
-            {news &&
-              news.map((item) => <NewsItem key={item._id} news={item} />)}
-            <div className="paginationDiv">
-              <Pagination
-                count={pagesCount}
-                page={page || 1}
-                onChange={handlePageChage}
-                color="herroColor"
-              />
-            </div>
-          </div>
-          <div className="asside">
-            <div className="topButtonCover">
+    <Page title="Головна" main={false}>
+      <StyledMain>
+        <div className="homeContainer">
+          <div>
+            <div className="buttonDiv">
               <Link className="assideLink" href="/">
                 Інформація для вступу
               </Link>
+              <Link className="assideLink" href="/">
+                Новини
+              </Link>
             </div>
-            <h2>Спортивні відділення</h2>
+            <div className="backtextCaveat">
+              <p className="textCaveat">
+                Дитячо-юнацька спортивна школа № 1 є закладом спеціалізованої
+                позашкільної освіти спортивного профілю - закладом фізичної
+                культури і спорту, який забезпечує розвиток здібностей
+                вихованців в обраному виді спорту, визнаному в Україні, створює
+                необхідні умови для гармонійного виховання, фізичного розвитку,
+                повноцінного оздоровлення, змістовного відпочинку і дозвілля
+                дітей та молоді, самореалізації, набуття навичок здорового
+                способу життя, підготовки спортсменів для резервного спорту.{" "}
+              </p>
+            </div>
+            <Carousel height={500} autoPlay duration={500} interval={3000}>
+              <div>
+                <div className="ImageDiv">
+                  <Image
+                    src="/mainCarousel/1.jpg"
+                    alt="caruosel iamge"
+                    width={800}
+                    height={500}
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="ImageDiv">
+                  <Image
+                    src="/mainCarousel/2.jpg"
+                    alt="caruosel iamge"
+                    width={800}
+                    height={500}
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="ImageDiv">
+                  <Image
+                    src="/mainCarousel/3.jpg"
+                    alt="caruosel iamge"
+                    width={800}
+                    height={500}
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="ImageDiv">
+                  <Image
+                    src="/mainCarousel/4.jpg"
+                    alt="caruosel iamge"
+                    width={800}
+                    height={500}
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="ImageDiv">
+                  <Image
+                    src="/mainCarousel/5.jpg"
+                    alt="caruosel iamge"
+                    width={800}
+                    height={500}
+                  />
+                </div>
+              </div>
+            </Carousel>
+          </div>
+          <div className="asside">
+            <h3>Спортивні відділення</h3>
             <ul className="linekList">
               {navigaion.sport[0].navItems.map((item, index) => {
                 return (
@@ -109,29 +101,9 @@ export default function Home({ news, pagesCount }) {
                 );
               })}
             </ul>
-            <div className="backtextCaveat">
-              <p className="textCaveat">
-                Дитячо-юнацька спортивна школа № 1 є закладом спеціалізованої
-                позашкільної освіти спортивного профілю - закладом фізичної
-                культури і спорту, який забезпечує розвиток здібностей
-                вихованців в обраному виді спорту, визнаному в Україні, створює
-                необхідні умови для гармонійного виховання, фізичного розвитку,
-                повноцінного оздоровлення, змістовного відпочинку і дозвілля
-                дітей та молоді, самореалізації, набуття навичок здорового
-                способу життя, підготовки спортсменів для резервного спорту.{" "}
-              </p>
-            </div>
-            <div className="homeGalery">
-              <Image
-                src="/homeImages/i1.jpg"
-                alt="students"
-                width={300}
-                height={100}
-              />
-            </div>
           </div>
         </div>
-      </StyledHome>
-    </Layout>
+      </StyledMain>
+    </Page>
   );
 }
