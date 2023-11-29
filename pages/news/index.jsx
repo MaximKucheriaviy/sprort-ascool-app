@@ -21,7 +21,15 @@ export const getServerSideProps = async (context) => {
         pagesCount: data.pagesCount,
       },
     };
-  } catch (err) {}
+  } catch (err) {
+    console.log("there");
+    return {
+      props: {
+        news: null,
+        pagesCount: 0,
+      },
+    };
+  }
 };
 export default function Home({ news, pagesCount }) {
   const router = useRouter();

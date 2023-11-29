@@ -20,7 +20,7 @@ export const getNews = async (
     });
     return result.data;
   } catch (err) {
-    return null;
+    throw err;
   }
 };
 
