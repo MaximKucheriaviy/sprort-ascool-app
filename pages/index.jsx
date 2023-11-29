@@ -1,4 +1,3 @@
-import { Layout } from "@/components/Layout/Layout";
 import { StyledMain } from "@/components/styledPages/StyledMain";
 import Carousel from "react-material-ui-carousel";
 import Link from "next/link";
@@ -16,7 +15,7 @@ export default function Main() {
               <Link className="assideLink" href="/">
                 Інформація для вступу
               </Link>
-              <Link className="assideLink" href="/">
+              <Link className="assideLink" href="/news">
                 Новини
               </Link>
             </div>

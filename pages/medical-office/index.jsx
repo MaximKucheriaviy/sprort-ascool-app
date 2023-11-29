@@ -10,7 +10,7 @@ export default function MedicalOfice() {
         <p className="photoSubtitle">
           Медичний супровід навчально-тренувального процесу забезпечують:
         </p>
-        <ul className="">
+        <ul className="imageList">
           <CoachItem
             title="Погребняк Тамара Михайлівна"
             src="/medical/pohrebniak.jpg"
@@ -24,6 +24,14 @@ export default function MedicalOfice() {
             src="/medical/milianezh.jpg"
           />
         </ul>
+        <div className="">
+          <h3>Травматизм та його попередження у дітей</h3>
+          <p>
+            Термін “травма” означає тілесне пошкодження при пораненні.
+            Пошкодження, які повторювались у певній групі населення, називаються
+            <span> травматизмом.</span>
+          </p>
+        </div>
       </StyledMedcalOffice>
     </Page>
   );

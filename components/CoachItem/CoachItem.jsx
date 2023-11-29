@@ -1,8 +1,9 @@
 import Image from "next/image";
+import { PhotoListItem } from "@/components/StyiledComponents/PhotoListItem";
 
 export const CoachItem = ({ src, title, subtitle }) => {
   return (
-    <li>
+    <PhotoListItem>
       <div className="ImageThumb">
         <Image src={src} alt="coachImage" width={393} height={413} />
       </div>
@@ -10,6 +11,6 @@ export const CoachItem = ({ src, title, subtitle }) => {
         <h3>{title}</h3>
         <p>{subtitle}</p>
       </div>
-    </li>
+    </PhotoListItem>
   );
 };
