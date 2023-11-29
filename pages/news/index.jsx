@@ -8,16 +8,20 @@ import { Pagination, TextField, Button } from "@mui/material";
 import { AiOutlineSearch } from "react-icons/ai";
 export const getServerSideProps = async (context) => {
   const { query } = context;
-  const { news, pagesCount } = await getNews(
-    query.page || 1,
-    query.keyword || ""
-  );
-  return {
-    props: {
-      news,
-      pagesCount,
-    },
-  };
+  try {
+    const data = await getNews(query.page || 1, query.keyword || "");
+    if (!data) {
+      return {
+        notFound: true,
+      };
+    }
+    return {
+      props: {
+        news: data.news,
+        pagesCount: data.pagesCount,
+      },
+    };
+  } catch (err) {}
 };
 export default function Home({ news, pagesCount }) {
   const router = useRouter();

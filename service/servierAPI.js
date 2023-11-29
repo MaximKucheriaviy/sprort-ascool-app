@@ -1,7 +1,7 @@
 import axios from "axios";
 
 axios.defaults.baseURL = "https://sport-school-server.onrender.com/api/";
-// axios.defaults.baseURL = "http://localhost:3001/api/";
+//axios.defaults.baseURL = "http://localhost:3001/api/";
 
 export const getNews = async (
   page = 1,
@@ -20,7 +20,6 @@ export const getNews = async (
     });
     return result.data;
   } catch (err) {
-    console.log(err);
     return null;
   }
 };
