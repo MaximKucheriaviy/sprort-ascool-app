@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { PhotoListItem } from "@/components/StyiledComponents/PhotoListItem";
 
-export const CoachItem = ({ src, title, subtitle }) => {
+export const CoachItem = ({ src, title, subtitle, category, sport }) => {
   return (
     <PhotoListItem>
       <div className="ImageThumb">
@@ -9,6 +9,7 @@ export const CoachItem = ({ src, title, subtitle }) => {
       </div>
       <div className="textBox">
         <h3>{title}</h3>
+        <p>{sport}</p>
         <p>{subtitle}</p>
       </div>
     </PhotoListItem>

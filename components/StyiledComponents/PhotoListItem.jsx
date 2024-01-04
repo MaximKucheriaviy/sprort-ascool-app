@@ -4,6 +4,7 @@ export const PhotoListItem = styled.li`
   background-color: #f5f5f5;
   border-radius: 10px;
   overflow: hidden;
+  padding-bottom: 20px;
   & .ImageThumb {
     padding: 20px 20px 20px 20px;
     background-color: #dfdfdf;
@@ -21,6 +22,7 @@ export const PhotoListItem = styled.li`
     margin-top: 20px;
     font-size: 20px;
     font-family: Roboto, sans-serif;
+    width: 80%;
   }
 
   & p {
