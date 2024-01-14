@@ -101,7 +101,7 @@ export default function CoachContacts() {
             borderBottom={"1px solid gray"}
           >
             <Grid xs={9} item>
-              <p>Дем'янцев Василь Іванович</p>
+              <p>{`Дем'янцев Василь Іванович`}</p>
             </Grid>
             <Grid xs={3} item>
               <a href="tel:067-963-64-42">067-963-64-42</a>
